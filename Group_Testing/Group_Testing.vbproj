@@ -1,0 +1,849 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26EBE3B7-441F-4D47-9E63-B025F5F40CF9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Group_Testing.My.MyApplication</StartupObject>
+    <RootNamespace>Group_Testing</RootNamespace>
+    <AssemblyName>Group_Testing</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Group_Testing.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Group_Testing.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.26.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.26.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.8\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.8\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=9.0.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.9.0.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="ZstdSharp, Version=0.8.0.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.8.0\lib\net462\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BudgetingSystem.Designer.vb">
+      <DependentUpon>BudgetingSystem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BudgetingSystem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalendarAug.Designer.vb">
+      <DependentUpon>CalendarAug.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CalendarAug.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clothing.Designer.vb">
+      <DependentUpon>Clothing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Clothing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diet_BMI.Designer.vb">
+      <DependentUpon>Diet_BMI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Diet_BMI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diet_Drinks.Designer.vb">
+      <DependentUpon>Diet_Drinks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Diet_Drinks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diet_Foods.Designer.vb">
+      <DependentUpon>Diet_Foods.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Diet_Foods.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPrompt.Designer.vb">
+      <DependentUpon>EditPrompt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditPrompt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventFullPrompt.Designer.vb">
+      <DependentUpon>EventFullPrompt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EventFullPrompt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventPrompt1.Designer.vb">
+      <DependentUpon>EventPrompt1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EventPrompt1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventRemovePrompt.Designer.vb">
+      <DependentUpon>EventRemovePrompt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EventRemovePrompt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expenses.Designer.vb">
+      <DependentUpon>Expenses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Expenses.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomePage.Designer.vb">
+      <DependentUpon>HomePage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Income.Designer.vb">
+      <DependentUpon>Income.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Income.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Notepad.Designer.vb">
+      <DependentUpon>Notepad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Notepad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile_edit.Designer.vb">
+      <DependentUpon>Profile_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Profile_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile_label.Designer.vb">
+      <DependentUpon>Profile_label.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Profile_label.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.vb">
+      <DependentUpon>Report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timetable.Designer.vb">
+      <DependentUpon>Timetable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Timetable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToDoList.Designer.vb">
+      <DependentUpon>ToDoList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ToDoList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BudgetingSystem.resx">
+      <DependentUpon>BudgetingSystem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalendarAug.resx">
+      <DependentUpon>CalendarAug.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clothing.resx">
+      <DependentUpon>Clothing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diet_BMI.resx">
+      <DependentUpon>Diet_BMI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diet_Drinks.resx">
+      <DependentUpon>Diet_Drinks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diet_Foods.resx">
+      <DependentUpon>Diet_Foods.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPrompt.resx">
+      <DependentUpon>EditPrompt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventFullPrompt.resx">
+      <DependentUpon>EventFullPrompt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventPrompt1.resx">
+      <DependentUpon>EventPrompt1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventRemovePrompt.resx">
+      <DependentUpon>EventRemovePrompt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expenses.resx">
+      <DependentUpon>Expenses.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Income.resx">
+      <DependentUpon>Income.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notepad.resx">
+      <DependentUpon>Notepad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile_edit.resx">
+      <DependentUpon>Profile_edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile_label.resx">
+      <DependentUpon>Profile_label.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timetable.resx">
+      <DependentUpon>Timetable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToDoList.resx">
+      <DependentUpon>ToDoList.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bmiHeight_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bmiWeightIcon_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bmiButton_1200x600.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bmiButton_100x50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bmiButton_100x501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dietIconFrame_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drinkIcon_180x90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drinkIcon_180x901.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foodIcon_150x75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calButton_100x501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calButton_100x502.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backButtonDesign2_100x50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backButtonDesign2_100x501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_2000x1000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom2GreyS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom2BrownS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom1GreyS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom1BrownS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom2GreyS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom2BrownS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom1GreyS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom1BrownS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom2GreyS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom2BrownS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom1GreyS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom1BrownS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom2GreyS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom2BrownS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom1GreyS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2GBottom1BrownS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom2GreyS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom2BrownS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom1GreyS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom1BrownS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom2GreyS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom2BrownS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom1GreyS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom1BrownS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom2GreyS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom2BrownS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom1GreyS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom1BrownS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom2GreyS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom2BrownS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom1GreyS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T2BBottom1BrownS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom2GreyS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom2BrownS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom1GreyS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom1BrownS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom2GreyS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom2BrownS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom1GreyS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom1BrownS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom2GreyS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom2BrownS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom1GreyS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom1BrownS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom2GreyS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom2BrownS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom1GreyS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1GBottom1BrownS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom2GreyS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom2BrownS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom1GreyS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom1BrownS2B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom2GreyS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom2BrownS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom1GreyS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom1BrownS2R_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom2GreyS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom2BrownS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom1GreyS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom1BrownS1B_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom2GreyS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom2GreyS2W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom2BrownS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom1GreyS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T1RBottom1BrownS1W_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom2GreyShoe2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom2GreyShoe2Red_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom2GreyShoe1Black_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom2GreyShoe1White_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom2BrownShoe2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom2BrownShoe2Red_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom2BrownShoe1Black_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom2BrownShoe1White_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom1GreyShoe2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom1GreyShoe2Red_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom1GreyShoe1Black_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom1GreyShoe1White_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom1BrownShoe2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom1BrownShoe2Red_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom1BrownShoe1Black_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom1BrownShoe1White_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2GreyShoe2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2GreyShoe2Red_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2GreyShoe1Black_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2GreyShoe1White_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2BlueShoe2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2BlueShoe2Red_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2BlueShoe1Black_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2BlueShoe1White_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1GreyShoe2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1GreyShoe2Red_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1GreyShoe1Black_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1GreyShoe1White_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1RedShoe2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1RedShoe2Red_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1RedShoe1Black_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1RedShoe1White_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2GreyBottom2Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2GreyBottom2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2GreyBottom1Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2GreyBottom1Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2BlueBottom2Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2BlueBottom2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2BlueBottom1Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2BlueBottom1Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1GreyBottom2Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1GreyBottom2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1GreyBottom1Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1GreyBottom1Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1RedBottom2Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1RedBottom2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1RedBottom1Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1RedBottom1Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shoe2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shoe2Red_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom2Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom1Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom1Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top2Blue_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top1Red_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ctop2Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cshoe2Red_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cshoe2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cshoe1Black_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cshoe1White_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cbottom2Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cbottom2Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cbottom1Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cbottom1Brown_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ctop2Blue_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ctop1Grey_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ctop1Red_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workInProgressIcon_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shoe1White_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shoe1Black_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mannequin_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calButton_100x50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoDesign3_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarIcon_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ToDoList_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timeTableIcon_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepadIcon_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clothSystemIcon_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\budgetIcon_1200x1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profileNoNecksNoFrame_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profileCircleFrame_1200x1200.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
