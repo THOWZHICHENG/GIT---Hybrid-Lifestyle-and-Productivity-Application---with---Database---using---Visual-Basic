@@ -1,0 +1,326 @@
+#SOURCE C:/Users/ChewGuan/Desktop/School/Visual Programming/Group Project/git.sql
+
+DROP DATABASE git;
+CREATE DATABASE git;
+USE git;
+
+#Profile
+
+CREATE TABLE PROFILE(
+uID INT(11) NOT NULL AUTO_INCREMENT,
+fName VARCHAR(500),
+lName VARCHAR(500),
+username VARCHAR(500),
+gender CHAR(1) CHECK(gender IN('M','F')),
+dob VARCHAR(500),
+email VARCHAR(500) NOT NULL,
+password VARCHAR(500),
+PRIMARY KEY(uID)
+);
+
+DESC PROFILE;
+
+
+#TIMETABLE
+
+CREATE TABLE TimeTable(
+day VARCHAR(100) NOT NULL,
+time VARCHAR(100) NOT NULL,
+content VARCHAR(250),
+timeSlot VARCHAR(100),
+PRIMARY KEY(day,time)
+);
+
+DESC TIMETABLE;
+
+
+#CALENDAR
+CREATE TABLE CALENDAR(
+day VARCHAR(100) NOT NULL,
+week VARCHAR(100) NOT NULL,
+months VARCHAR(100) NOT NULL,
+year VARCHAR(100) NOT NULL,
+eventCount INTEGER,
+event1 VARCHAR(250),
+event2 VARCHAR(250),
+event1Full BOOLEAN,
+event2Full BOOLEAN,
+PRIMARY KEY(day,week,months,year)
+);
+
+DESC CALENDAR;
+
+
+#TO_DO_LIST
+
+CREATE TABLE TO_DO_LIST(
+tdID INT(11) NOT NULL AUTO_INCREMENT,
+objective VARCHAR(500),
+status VARCHAR(50),
+uID INT(11),
+priority VARCHAR(50),
+PRIMARY KEY(tdID),
+FOREIGN KEY(uID) REFERENCES PROFILE(uID)
+);
+
+DESC TO_DO_LIST;
+
+
+#BUDGET_SAVING
+
+CREATE TABLE BUDGET_SAVING(
+bsID INT(11) NOT NULL AUTO_INCREMENT,
+date VARCHAR(500),
+amount DECIMAL(10,2),
+uID INT(11),
+PRIMARY KEY(bsID),
+FOREIGN KEY(uID) REFERENCES PROFILE(uID)
+);
+
+DESC BUDGET_SAVING;
+
+
+#BUDGET_EXPENSES
+
+CREATE TABLE BUDGET_EXPENSES(
+beID INT(11) NOT NULL AUTO_INCREMENT,
+date VARCHAR(500),
+categories VARCHAR(500),
+amount DECIMAL(10,2),
+remarks VARCHAR(500),
+uID INT(11),
+PRIMARY KEY(beID),
+FOREIGN KEY(uID) REFERENCES PROFILE(uID)
+);
+
+DESC BUDGET_EXPENSES;
+
+
+#DIET_ITEM
+
+CREATE TABLE DIET_ITEM(
+diID INT(11) NOT NULL AUTO_INCREMENT,
+type VARCHAR(500) UNIQUE,
+PRIMARY KEY(diID)
+);
+
+DESC DIET_ITEM;
+
+
+#FOOD
+
+CREATE TABLE FOOD(
+fID INT(11),
+type VARCHAR(500),
+foodName VARCHAR(500),
+foodImg VARCHAR(500),
+calories DECIMAL(10,2),
+PRIMARY KEY(fID),
+FOREIGN KEY(fID) REFERENCES DIET_ITEM(diID),
+FOREIGN KEY(type) REFERENCES DIET_ITEM(type)
+);
+
+DESC FOOD;
+
+
+#DRINK
+
+CREATE TABLE DRINK(
+dID INT(11),
+type VARCHAR(500),
+drinkName VARCHAR(500),
+drinkImg VARCHAR(500),
+calories DECIMAL(10,2),
+PRIMARY KEY(dID),
+FOREIGN KEY(dID) REFERENCES DIET_ITEM(diID),
+FOREIGN KEY(type) REFERENCES DIET_ITEM(type)
+);
+
+DESC DRINK;
+
+
+INSERT INTO PROFILE VALUES
+(1,'Budi','Budi','BudiBudi','M','12-4-2020','budi@gmail.com','12345678');
+
+#Monday
+INSERT INTO TIMETABLE VALUES('Monday','0000 - 0200','','False');
+INSERT INTO TIMETABLE VALUES('Monday','0200 - 0400','','False');
+INSERT INTO TIMETABLE VALUES('Monday','0400 - 0600','','False');
+INSERT INTO TIMETABLE VALUES('Monday','0600 - 0800','','False');
+INSERT INTO TIMETABLE VALUES('Monday','0800 - 1000','','False');
+INSERT INTO TIMETABLE VALUES('Monday','1000 - 1200','','False');
+INSERT INTO TIMETABLE VALUES('Monday','1200 - 1400','','False');
+INSERT INTO TIMETABLE VALUES('Monday','1400 - 1600','','False');
+INSERT INTO TIMETABLE VALUES('Monday','1600 - 1800','','False');
+INSERT INTO TIMETABLE VALUES('Monday','1800 - 2000','','False');
+INSERT INTO TIMETABLE VALUES('Monday','2000 - 2200','','False');
+INSERT INTO TIMETABLE VALUES('Monday','2200 - 0000','','False');
+
+#Tuesday
+INSERT INTO TIMETABLE VALUES('Tuesday','0000 - 0200','','False');
+INSERT INTO TIMETABLE VALUES('Tuesday','0200 - 0400','','False');
+INSERT INTO TIMETABLE VALUES('Tuesday','0400 - 0600','','False');
+INSERT INTO TIMETABLE VALUES('Tuesday','0600 - 0800','','False');
+INSERT INTO TIMETABLE VALUES('Tuesday','0800 - 1000','','False');
+INSERT INTO TIMETABLE VALUES('Tuesday','1000 - 1200','','False');
+INSERT INTO TIMETABLE VALUES('Tuesday','1200 - 1400','','False');
+INSERT INTO TIMETABLE VALUES('Tuesday','1400 - 1600','','False');
+INSERT INTO TIMETABLE VALUES('Tuesday','1600 - 1800','','False');
+INSERT INTO TIMETABLE VALUES('Tuesday','1800 - 2000','','False');
+INSERT INTO TIMETABLE VALUES('Tuesday','2000 - 2200','','False');
+INSERT INTO TIMETABLE VALUES('Tuesday','2200 - 0000','','False');
+
+#Wednesday
+INSERT INTO TIMETABLE VALUES('Wednesday','0000 - 0200','','False');
+INSERT INTO TIMETABLE VALUES('Wednesday','0200 - 0400','','False');
+INSERT INTO TIMETABLE VALUES('Wednesday','0400 - 0600','','False');
+INSERT INTO TIMETABLE VALUES('Wednesday','0600 - 0800','','False');
+INSERT INTO TIMETABLE VALUES('Wednesday','0800 - 1000','','False');
+INSERT INTO TIMETABLE VALUES('Wednesday','1000 - 1200','','False');
+INSERT INTO TIMETABLE VALUES('Wednesday','1200 - 1400','','False');
+INSERT INTO TIMETABLE VALUES('Wednesday','1400 - 1600','','False');
+INSERT INTO TIMETABLE VALUES('Wednesday','1600 - 1800','','False');
+INSERT INTO TIMETABLE VALUES('Wednesday','1800 - 2000','','False');
+INSERT INTO TIMETABLE VALUES('Wednesday','2000 - 2200','','False');
+INSERT INTO TIMETABLE VALUES('Wednesday','2200 - 0000','','False');
+
+#Thursday
+INSERT INTO TIMETABLE VALUES('Thursday','0000 - 0200','','False');
+INSERT INTO TIMETABLE VALUES('Thursday','0200 - 0400','','False');
+INSERT INTO TIMETABLE VALUES('Thursday','0400 - 0600','','False');
+INSERT INTO TIMETABLE VALUES('Thursday','0600 - 0800','','False');
+INSERT INTO TIMETABLE VALUES('Thursday','0800 - 1000','','False');
+INSERT INTO TIMETABLE VALUES('Thursday','1000 - 1200','','False');
+INSERT INTO TIMETABLE VALUES('Thursday','1200 - 1400','','False');
+INSERT INTO TIMETABLE VALUES('Thursday','1400 - 1600','','False');
+INSERT INTO TIMETABLE VALUES('Thursday','1600 - 1800','','False');
+INSERT INTO TIMETABLE VALUES('Thursday','1800 - 2000','','False');
+INSERT INTO TIMETABLE VALUES('Thursday','2000 - 2200','','False');
+INSERT INTO TIMETABLE VALUES('Thursday','2200 - 0000','','False');
+
+#Friday
+INSERT INTO TIMETABLE VALUES('Friday','0000 - 0200','','False');
+INSERT INTO TIMETABLE VALUES('Friday','0200 - 0400','','False');
+INSERT INTO TIMETABLE VALUES('Friday','0400 - 0600','','False');
+INSERT INTO TIMETABLE VALUES('Friday','0600 - 0800','','False');
+INSERT INTO TIMETABLE VALUES('Friday','0800 - 1000','','False');
+INSERT INTO TIMETABLE VALUES('Friday','1000 - 1200','','False');
+INSERT INTO TIMETABLE VALUES('Friday','1200 - 1400','','False');
+INSERT INTO TIMETABLE VALUES('Friday','1400 - 1600','','False');
+INSERT INTO TIMETABLE VALUES('Friday','1600 - 1800','','False');
+INSERT INTO TIMETABLE VALUES('Friday','1800 - 2000','','False');
+INSERT INTO TIMETABLE VALUES('Friday','2000 - 2200','','False');
+INSERT INTO TIMETABLE VALUES('Friday','2200 - 0000','','False');
+
+#Saturday
+INSERT INTO TIMETABLE VALUES('Saturday','0000 - 0200','','False');
+INSERT INTO TIMETABLE VALUES('Saturday','0200 - 0400','','False');
+INSERT INTO TIMETABLE VALUES('Saturday','0400 - 0600','','False');
+INSERT INTO TIMETABLE VALUES('Saturday','0600 - 0800','','False');
+INSERT INTO TIMETABLE VALUES('Saturday','0800 - 1000','','False');
+INSERT INTO TIMETABLE VALUES('Saturday','1000 - 1200','','False');
+INSERT INTO TIMETABLE VALUES('Saturday','1200 - 1400','','False');
+INSERT INTO TIMETABLE VALUES('Saturday','1400 - 1600','','False');
+INSERT INTO TIMETABLE VALUES('Saturday','1600 - 1800','','False');
+INSERT INTO TIMETABLE VALUES('Saturday','1800 - 2000','','False');
+INSERT INTO TIMETABLE VALUES('Saturday','2000 - 2200','','False');
+INSERT INTO TIMETABLE VALUES('Saturday','2200 - 0000','','False');
+
+#Sunday
+INSERT INTO TIMETABLE VALUES('Sunday','0000 - 0200','','False');
+INSERT INTO TIMETABLE VALUES('Sunday','0200 - 0400','','False');
+INSERT INTO TIMETABLE VALUES('Sunday','0400 - 0600','','False');
+INSERT INTO TIMETABLE VALUES('Sunday','0600 - 0800','','False');
+INSERT INTO TIMETABLE VALUES('Sunday','0800 - 1000','','False');
+INSERT INTO TIMETABLE VALUES('Sunday','1000 - 1200','','False');
+INSERT INTO TIMETABLE VALUES('Sunday','1200 - 1400','','False');
+INSERT INTO TIMETABLE VALUES('Sunday','1400 - 1600','','False');
+INSERT INTO TIMETABLE VALUES('Sunday','1600 - 1800','','False');
+INSERT INTO TIMETABLE VALUES('Sunday','1800 - 2000','','False');
+INSERT INTO TIMETABLE VALUES('Sunday','2000 - 2200','','False');
+INSERT INTO TIMETABLE VALUES('Sunday','2200 - 0000','','False');
+
+#July
+#Week1
+INSERT INTO CALENDAR VALUES('Monday','Week1','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Tuesday','Week1','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Wednesday','Week1','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Thursday','Week1','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Friday','Week1','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Saturday','Week1','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Sunday','Week1','July','2024',0,'','',False,False);
+
+#Week2
+INSERT INTO CALENDAR VALUES('Monday','Week2','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Tuesday','Week2','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Wednesday','Week2','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Thursday','Week2','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Friday','Week2','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Saturday','Week2','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Sunday','Week2','July','2024',0,'','',False,False);
+
+#Week3
+INSERT INTO CALENDAR VALUES('Monday','Week3','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Tuesday','Week3','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Wednesday','Week3','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Thursday','Week3','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Friday','Week3','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Saturday','Week3','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Sunday','Week3','July','2024',0,'','',False,False);
+
+#Week4
+INSERT INTO CALENDAR VALUES('Monday','Week4','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Tuesday','Week4','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Wednesday','Week4','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Thursday','Week4','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Friday','Week4','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Saturday','Week4','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Sunday','Week4','July','2024',0,'','',False,False);
+
+#Week5
+INSERT INTO CALENDAR VALUES('Monday','Week5','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Tuesday','Week5','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Wednesday','Week5','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Thursday','Week5','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Friday','Week5','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Saturday','Week5','July','2024',0,'','',False,False);
+INSERT INTO CALENDAR VALUES('Sunday','Week5','July','2024',0,'','',False,False);
+
+
+INSERT INTO BUDGET_SAVING VALUES
+(1,'25/6/2024',200,1),
+(2,'30/7/2024',450,1);
+
+INSERT INTO DIET_ITEM (diID, type) VALUES
+(1, 'foods1'),
+(2, 'foods2'),
+(3, 'foods3'),
+(4, 'foods4');
+
+INSERT INTO DIET_ITEM (diID, type) VALUES
+(5, 'drinks1'),
+(6, 'drinks2'),
+(7, 'drinks3'),
+(8, 'drinks4');
+
+INSERT INTO FOOD (fID, type, foodName, foodImg, calories) VALUES
+(1, 'foods1', 'Burger', 'C:/Users/thowz/Downloads/Visual Programming/Group Project(Draft)/FoodIcon_all/burgerIcon_1200x1200.png', 550),
+(2, 'foods2', 'Fried Rice', 'C:/Users/thowz/Downloads/Visual Programming/Group Project(Draft)/FoodIcon_all/friedRice_1200x1200.png', 300),
+(3, 'foods3', 'Orange', 'C:/Users/thowz/Downloads/Visual Programming/Group Project(Draft)/FoodIcon_all/orangeIcon_1200x1200.png', 62),
+(4, 'foods4', 'Salad', 'C:/Users/thowz/Downloads/Visual Programming/Group Project(Draft)/FoodIcon_all/saladIcon_1200x1200.png', 150);
+
+INSERT INTO DRINK (dID, type, drinkName, drinkImg, calories) VALUES
+(5, 'drinks1', 'Beer', 'C:/Users/thowz/Downloads/Visual Programming/Group Project(Draft)/DrinkIcon_all/beerIcon_1200x1200.png', 154),
+(6, 'drinks2', 'Soda', 'C:/Users/thowz/Downloads/Visual Programming/Group Project(Draft)/DrinkIcon_all/sodaIcon_1200x1200.png', 150),
+(7, 'drinks3', 'Milk', 'C:/Users/thowz/Downloads/Visual Programming/Group Project(Draft)/DrinkIcon_all/milkIcon_1200x1200.png', 103),
+(8, 'drinks4', 'Coffee', 'C:/Users/thowz/Downloads/Visual Programming/Group Project(Draft)/DrinkIcon_all/coffeeIcon_1200x1200.png', 2);
+
+SELECT * FROM PROFILE;
+SELECT * FROM TIMETABLE;
+SELECT * FROM TO_DO_LIST;
+SELECT * FROM CALENDAR;
+SELECT * FROM BUDGET_SAVING;
+SELECT * FROM BUDGET_EXPENSES;
+SELECT * FROM DIET_ITEM;
+SELECT * FROM FOOD;
+SELECT * FROM DRINK;
