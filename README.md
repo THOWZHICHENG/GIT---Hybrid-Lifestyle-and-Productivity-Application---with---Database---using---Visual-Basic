@@ -5,7 +5,11 @@ Additionally, remember to provide the correct image path in both the relevant va
 
 Please note: This application may contain some unresolved bugs. Public feedback is welcome and will be considered for improvements. It is open for modifications and can only be used with Visual Studio 2022. It's OPEN SOURCE!
 
-Login
+
+Login Page
+Email: budi@gmail.com
+Password: 12345678
+
 <img width="756" alt="Screenshot 2024-10-16 143614" src="https://github.com/user-attachments/assets/0e25e698-bf71-4f24-99b8-c91dfafd68f8">
 
 HomePage
